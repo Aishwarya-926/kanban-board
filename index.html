@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Day 15: Kanban Board</title>
+    <title>Day 15: Professional Kanban Board</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
@@ -13,31 +13,22 @@
     </header>
 
     <main class="kanban-board">
-        <!-- To Do Column -->
-        <div class="kanban-column" id="todo-column">
+        <div class="kanban-column" data-column="todo">
             <h2 class="column-title">To Do</h2>
-            <div class="tasks-container" data-column="todo">
-                <!-- Tasks will be added here -->
-            </div>
-            <button class="add-task-btn" data-column="todo">+ Add Task</button>
+            <div class="tasks-container"></div>
+            <button class="add-task-btn">+ Add Task</button>
         </div>
 
-        <!-- In Progress Column -->
-        <div class="kanban-column" id="inprogress-column">
+        <div class="kanban-column" data-column="inprogress">
             <h2 class="column-title">In Progress</h2>
-            <div class="tasks-container" data-column="inprogress">
-                <!-- Tasks will be added here -->
-            </div>
-            <button class="add-task-btn" data-column="inprogress">+ Add Task</button>
+            <div class="tasks-container"></div>
+            <button class="add-task-btn">+ Add Task</button>
         </div>
 
-        <!-- Done Column -->
-        <div class="kanban-column" id="done-column">
+        <div class="kanban-column" data-column="done">
             <h2 class="column-title">Done</h2>
-            <div class="tasks-container" data-column="done">
-                <!-- Tasks will be added here -->
-            </div>
-            <button class="add-task-btn" data-column="done">+ Add Task</button>
+            <div class="tasks-container"></div>
+            <button class="add-task-btn">+ Add Task</button>
         </div>
     </main>
 
@@ -46,7 +37,15 @@
         <div class="modal-content">
             <h3>Add New Task</h3>
             <form id="add-task-form">
-                <input type="text" id="task-input" placeholder="Enter task description..." required>
+                <textarea id="task-input" placeholder="Enter task description..." required></textarea>
+                <div class="form-group">
+                    <label for="task-priority">Priority</label>
+                    <select id="task-priority">
+                        <option value="low">Low</option>
+                        <option value="medium" selected>Medium</option>
+                        <option value="high">High</option>
+                    </select>
+                </div>
                 <div class="modal-actions">
                     <button type="submit">Add Task</button>
                     <button type="button" id="cancel-btn">Cancel</button>
