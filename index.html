@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 15: Kanban Board</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>My Kanban Board</h1>
+    </header>
+
+    <main class="kanban-board">
+        <!-- To Do Column -->
+        <div class="kanban-column" id="todo-column">
+            <h2 class="column-title">To Do</h2>
+            <div class="tasks-container" data-column="todo">
+                <!-- Tasks will be added here -->
+            </div>
+            <button class="add-task-btn" data-column="todo">+ Add Task</button>
+        </div>
+
+        <!-- In Progress Column -->
+        <div class="kanban-column" id="inprogress-column">
+            <h2 class="column-title">In Progress</h2>
+            <div class="tasks-container" data-column="inprogress">
+                <!-- Tasks will be added here -->
+            </div>
+            <button class="add-task-btn" data-column="inprogress">+ Add Task</button>
+        </div>
+
+        <!-- Done Column -->
+        <div class="kanban-column" id="done-column">
+            <h2 class="column-title">Done</h2>
+            <div class="tasks-container" data-column="done">
+                <!-- Tasks will be added here -->
+            </div>
+            <button class="add-task-btn" data-column="done">+ Add Task</button>
+        </div>
+    </main>
+
+    <!-- Add Task Modal -->
+    <div id="add-task-modal" class="modal-overlay hidden">
+        <div class="modal-content">
+            <h3>Add New Task</h3>
+            <form id="add-task-form">
+                <input type="text" id="task-input" placeholder="Enter task description..." required>
+                <div class="modal-actions">
+                    <button type="submit">Add Task</button>
+                    <button type="button" id="cancel-btn">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
